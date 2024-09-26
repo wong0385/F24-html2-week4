@@ -1,0 +1,36 @@
+.back-sizer {
+    height: 500px;
+    border: 2px solid coral;
+    background-repeat: no-repeat;
+    /* the ../ is telling the broswer to go out of the styles folder,
+    before going into the images folder to find the image */
+    background-image: url(../images/puppy-full.jpg);
+
+    /* use background size to scale your background */
+    /* background-size: contain; this make the whole image visible inside the element */
+    /* cover tries to make sure the whole element is covered by the image (no white space)*/
+    background-size: cover;
+
+    /* use to say what part of the image (or where)is displayed 
+    one value is both horizontal and vertical 
+    two values are horizontal, then vertical */
+    background-position: 50% center;
+}
+
+.test2 img {
+    width: 100%;
+    /* vw = viewport width */
+}
+
+@media screen and (min-width:900px) {
+    .test2 {
+        width:66.6vw;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .test2 {
+        width:33.3vw;
+    }
+}
+

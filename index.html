@@ -12,8 +12,48 @@
         <h1>HTML Responsive Images</h1>
     </header>
     <main>
+        <section class="back-sizer">
+          <!-- we're using this section to play with background images -->
+        </section>
         <section>
-            <img src="images/puppy-full.jpg" alt="A white puppy standing in short grass">
+            <img 
+              srcset="
+                images/puppy-2.0.jpg 2x,
+                images/puppy-3.0.jpg 3x"
+            src="images/puppy-full.jpg" alt="A white puppy standing in short grass">
+        </section>
+        <section class="test2">
+          <!-- the x above stands for pixel density
+           the w below stands for width (and will respond to both the image size and the pixel density
+           the width you enter must correspond to the image's actual width) -->
+          <img
+            srcset="
+              images/puppy-1.0.jpg 1000w,
+              images/puppy-2.0.jpg 2000w,
+              images/puppy-3.0.jpg 3000w"
+              
+              sizes="
+              (min-width:900px) 66.6vw
+              (min-width:1200px) 33.3vw"
+              
+          src="images/puppy-1.0.jpg" alt="A white puppy standing in short grass">
+
+        </section>
+
+        <section>
+          <!-- the srcset attribute is great for showing the same image at different sizes
+           the picture attribute is for showing a different image at different sizes -->
+           <picture>
+            <source srcset="images/puppy-1200.jpg"
+                    media="(min-width:1240px)">
+
+            <source srcset="images/puppy-900.jpg"
+                    media="(min-width:940px)">
+
+            <source srcset="images/puppy-600.jpg"
+                    media="(max-width:939px)">
+            <img src="images/puppy-600.jpg" alt="A white puppy standing in short grass">
+           </picture>
         </section>
     </main>
     <footer>
